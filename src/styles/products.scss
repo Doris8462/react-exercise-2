@@ -1,0 +1,33 @@
+.productsList {
+  display: grid;
+  grid-template-columns: repeat(3, 33.33%);
+  margin-left: 2rem;
+}
+.productItem {
+  position: relative;
+  margin: 10% 0;
+}
+.addButton {
+  display: inline-block;
+  width: 80px;
+  position: absolute;
+  top: 90%;
+  left: 38%;
+  color: white;
+  background-color: rgb(44, 101, 222);
+  height: 10%;
+  border: none;
+}
+.addButton:active {
+  background-color: #4ba5fb;
+  border: none;
+}
+.addButton:focus {
+  outline: 0;
+}
+.category {
+  font-size: 1.3rem;
+  font-weight: bold;
+  display: inline-block;
+  margin-left: 2rem;
+}

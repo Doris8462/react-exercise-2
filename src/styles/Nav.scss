@@ -1,0 +1,31 @@
+.navBar {
+  height: 70px;
+  background-color: rgb(44, 101, 222);
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+.store {
+  font-size: 2.5rem;
+  color: white;
+  font-weight: bold;
+  padding-left: 1rem;
+}
+.shoppingCart {
+  display: flex;
+  margin-right: 10px;
+  margin-top: 20px;
+}
+.cartNumber {
+  background-color: red;
+  width: 25px;
+  height: 20px;
+  line-height: 20px;
+  color: white;
+  border-radius: 40%;
+  text-align: center;
+}
+.cart {
+  height: 45%;
+  margin-right: 8px;
+}
