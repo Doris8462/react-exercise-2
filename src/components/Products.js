@@ -22,6 +22,37 @@ class Products extends Component {
       addNumber: ++this.state.addNumber,
     });
   }
+  addCategory(category, list) {
+    return (
+      <div className="{category}">
+        <span className="category">{category}</span>
+        <div className="productsList">
+          {list.map((value, key) => {
+            return (
+              <div className="productItem">
+                <Product
+                  key={key}
+                  category={value.price}
+                  price={value.price}
+                  name={value.name}
+                ></Product>
+                <button
+                  className="addButton"
+                  type="button"
+                  onClick={() => {
+                    this.increaseAddNumbers();
+                  }}
+                >
+                  add to cart
+                </button>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    );
+  }
+
   componentDidMount() {
     fetchJsonp('http://localhost:3000/products')
       .then((res) => {
@@ -44,58 +75,8 @@ class Products extends Component {
     return (
       <div className="Products">
         <Nav addNumber={this.state.addNumber}></Nav>
-        <div className="iPhone">
-          <span className="category">iPone</span>
-          <div className="productsList">
-            {this.state.iPhoneList.map((value, key) => {
-              return (
-                <div className="productItem">
-                  <Product
-                    key={key}
-                    category={value.price}
-                    price={value.price}
-                    name={value.name}
-                  ></Product>
-                  <button
-                    className="addButton"
-                    type="button"
-                    onClick={() => {
-                      this.increaseAddNumbers();
-                    }}
-                  >
-                    add to cart
-                  </button>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-        <div className="HUAWEI">
-          <span className="category">HUAWEI</span>
-          <div className="productsList">
-            {this.state.HUAWEIList.map((value, key) => {
-              return (
-                <div className="productItem">
-                  <Product
-                    key={key}
-                    category={value.price}
-                    price={value.price}
-                    name={value.name}
-                  ></Product>
-                  <button
-                    className="addButton"
-                    type="button"
-                    onClick={() => {
-                      this.increaseAddNumbers();
-                    }}
-                  >
-                    add to cart
-                  </button>
-                </div>
-              );
-            })}
-          </div>
-        </div>
+        {this.addCategory('HUAWEI', this.state.iPhoneList)}
+        {this.addCategory('iPhone', this.state.HUAWEIList)}
       </div>
     );
   }
