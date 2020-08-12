@@ -75,8 +75,8 @@ class Products extends Component {
     return (
       <div className="Products">
         <Nav addNumber={this.state.addNumber}></Nav>
-        {this.addCategory('HUAWEI', this.state.iPhoneList)}
-        {this.addCategory('iPhone', this.state.HUAWEIList)}
+        {this.addCategory('iPhone', this.state.iPhoneList)}
+        {this.addCategory('HUAWEI', this.state.HUAWEIList)}
       </div>
     );
   }
